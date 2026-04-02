@@ -1,0 +1,5 @@
+colmap_workspace/
+frames/
+*.py
+run_colmap.sh
+.DS_Store
