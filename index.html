@@ -16,574 +16,270 @@
     --dark: #0d1b2a;
     --light: #f8f6f2;
     --gray: #6b7280;
-    --card-bg: #ffffff;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--dark);
-    color: #333;
-    overflow-x: hidden;
-}
+body { font-family: 'Inter', sans-serif; background: var(--dark); color: #333; overflow-x: hidden; }
 
 /* SLIDE SYSTEM */
 .slide {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 40px;
-    position: relative;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 60px 40px; position: relative;
 }
-
 .slide-number {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: rgba(255,255,255,0.4);
-    font-size: 14px;
-    font-weight: 300;
+    position: absolute; top: 20px; right: 30px;
+    color: rgba(255,255,255,0.4); font-size: 14px; font-weight: 300;
 }
-
-/* TITLE SLIDE */
 .slide-title {
     background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 50%, #0d1b2a 100%);
-    text-align: center;
-    color: white;
+    text-align: center; color: white;
 }
-.slide-title .uni-badge {
-    display: inline-block;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 8px 24px;
-    border-radius: 30px;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
+.slide-content { background: var(--light); }
+.slide-dark { background: linear-gradient(180deg, #0d1b2a, #1a3a5c); color: white; }
+.slide-footer {
+    background: linear-gradient(135deg, #0d1b2a, #1a3a5c);
+    text-align: center; color: white;
 }
+
+/* LOGOS BAR */
+.logos-bar {
+    display: flex; justify-content: center; align-items: center;
+    gap: 40px; margin-bottom: 35px; flex-wrap: wrap;
+}
+.logo-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.logo-item img {
+    height: 70px; width: auto; object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    background: white; border-radius: 10px; padding: 8px;
+}
+.logo-item .logo-text {
+    font-size: 10px; color: rgba(255,255,255,0.5); text-align: center;
+    max-width: 130px; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* TITLE */
 .slide-title h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 52px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.15;
+    font-size: 48px; font-weight: 700; margin-bottom: 14px; line-height: 1.15;
 }
 .slide-title h2 {
-    font-size: 26px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 30px;
+    font-size: 24px; font-weight: 300; color: rgba(255,255,255,0.8); margin-bottom: 28px;
 }
 .slide-title .subtitle {
-    font-size: 16px;
-    color: rgba(255,255,255,0.5);
-    max-width: 600px;
-    line-height: 1.7;
-}
-.slide-title .meta {
-    margin-top: 50px;
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.slide-title .meta-item {
-    text-align: center;
-}
-.slide-title .meta-item .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--accent);
-    margin-bottom: 4px;
-}
-.slide-title .meta-item .value {
-    font-size: 15px;
-    color: rgba(255,255,255,0.7);
+    font-size: 15px; color: rgba(255,255,255,0.5); max-width: 650px; line-height: 1.7;
 }
 
-/* CONTENT SLIDES */
-.slide-content {
-    background: var(--light);
+/* PREPARED BY */
+.prepared-by {
+    margin-top: 28px; padding: 18px 40px;
+    border: 1px solid rgba(232,164,28,0.3); border-radius: 12px;
+    background: rgba(232,164,28,0.05); text-align: center;
 }
-.slide-dark {
-    background: linear-gradient(180deg, #0d1b2a, #1a3a5c);
-    color: white;
+.prepared-by .name { font-size: 20px; font-weight: 600; color: var(--accent); margin-bottom: 3px; }
+.prepared-by .role { font-size: 13px; color: rgba(255,255,255,0.6); }
+.prepared-for { margin-top: 14px; text-align: center; }
+.prepared-for .label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.4); margin-bottom: 5px;
 }
+.prepared-for .org { font-size: 16px; color: rgba(255,255,255,0.8); font-weight: 500; }
+.prepared-for .sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 2px; }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
+/* META */
+.meta { margin-top: 35px; display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+.meta-item { text-align: center; }
+.meta-item .label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--accent); margin-bottom: 4px;
 }
+.meta-item .value { font-size: 14px; color: rgba(255,255,255,0.7); }
+
+/* SECTION HEADERS */
+.section-header { text-align: center; margin-bottom: 45px; }
 .section-header .tag {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--dark);
-    padding: 4px 16px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
+    display: inline-block; background: var(--accent); color: var(--dark);
+    padding: 4px 16px; border-radius: 20px;
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 14px;
 }
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    color: var(--primary);
-    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif; font-size: 36px;
+    color: var(--primary); margin-bottom: 10px;
 }
 .slide-dark .section-header h2 { color: white; }
-.section-header p {
-    font-size: 16px;
-    color: var(--gray);
-    max-width: 700px;
-    margin: 0 auto;
-}
+.section-header p { font-size: 15px; color: var(--gray); max-width: 700px; margin: 0 auto; line-height: 1.6; }
 .slide-dark .section-header p { color: rgba(255,255,255,0.6); }
 
-/* IMAGE COMPARISON */
-.comparison-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 1200px;
-    width: 100%;
-}
-.comparison-card {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    background: white;
-}
-.comparison-card img {
-    width: 100%;
-    display: block;
-}
-.comparison-card .caption {
-    padding: 12px 16px;
-    font-size: 13px;
-    font-weight: 500;
-    text-align: center;
-}
-.comparison-card.before .caption {
-    background: #dc3545;
-    color: white;
-}
-.comparison-card.after .caption {
-    background: var(--accent2);
-    color: white;
-}
-
-/* FULL WIDTH IMAGE SLIDER */
-.image-showcase {
-    max-width: 1100px;
-    width: 100%;
-}
-.image-showcase img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.3);
-}
-.image-showcase .nav-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-.image-showcase .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    cursor: pointer;
-    transition: all 0.3s;
-}
-.image-showcase .dot.active { background: var(--accent); transform: scale(1.3); }
-
-/* STATS GRID */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    max-width: 1000px;
-    width: 100%;
-}
+/* STATS */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1000px; width: 100%; }
 .stat-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 16px;
-    padding: 30px 20px;
-    text-align: center;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px; padding: 28px 18px; text-align: center;
 }
-.stat-card .number {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 8px;
+.stat-card .number { font-size: 38px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+.stat-card .unit { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+.stat-card .label { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.4; }
+
+/* IMAGES */
+.image-showcase { max-width: 1100px; width: 100%; }
+.image-showcase img { width: 100%; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+.nav-dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+.dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s;
 }
-.stat-card .unit {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 12px;
+.dot.active { background: var(--accent); transform: scale(1.3); }
+
+.sections-gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; max-width: 1200px; width: 100%; }
+.section-thumb {
+    border-radius: 8px; overflow: hidden; position: relative;
+    cursor: pointer; transition: transform 0.3s;
 }
-.stat-card .label {
-    font-size: 13px;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.4;
+.section-thumb:hover { transform: scale(1.05); }
+.section-thumb img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.section-thumb .overlay-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white; padding: 20px 8px 8px; font-size: 11px; font-weight: 500;
 }
 
-/* SPECS TABLE */
-.specs-table {
-    max-width: 900px;
-    width: 100%;
-    border-collapse: collapse;
+/* REFERENCE IMAGES */
+.ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; width: 100%; }
+.ref-card {
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2); background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
 }
-.specs-table th, .specs-table td {
-    padding: 14px 20px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+.ref-card img { width: 100%; aspect-ratio: 16/11; object-fit: cover; display: block; }
+.ref-card .caption {
+    padding: 12px 14px; font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.4;
 }
-.specs-table th {
-    color: var(--accent);
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    width: 35%;
+.ref-card .caption strong { color: var(--accent); display: block; margin-bottom: 3px; font-size: 13px; }
+
+/* CROSS-SECTION */
+.cross-section-container { max-width: 1100px; width: 100%; }
+.cross-section-container img {
+    width: 100%; border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); border: 1px solid #ddd;
 }
-.specs-table td {
-    color: rgba(255,255,255,0.8);
-    font-size: 15px;
+.cross-section-container .fig-caption {
+    text-align: center; margin-top: 10px; font-size: 13px; color: var(--gray); font-style: italic;
 }
 
 /* BENEFITS */
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 1000px;
-    width: 100%;
-}
+.benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 1000px; width: 100%; }
 .benefit-card {
-    display: flex;
-    gap: 16px;
-    padding: 24px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    align-items: flex-start;
+    display: flex; gap: 14px; padding: 22px; background: white;
+    border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); align-items: flex-start;
 }
 .benefit-card .icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
 }
 .benefit-card .icon.green { background: #e8f5e9; }
 .benefit-card .icon.blue { background: #e3f2fd; }
 .benefit-card .icon.orange { background: #fff3e0; }
 .benefit-card .icon.purple { background: #f3e5f5; }
-.benefit-card h4 {
-    font-size: 15px;
-    margin-bottom: 4px;
-    color: var(--primary);
-}
-.benefit-card p {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.5;
-}
+.benefit-card h4 { font-size: 14px; margin-bottom: 3px; color: var(--primary); }
+.benefit-card p { font-size: 12px; color: var(--gray); line-height: 1.5; }
 
-/* CORRIDOR MAP */
-.corridor-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1100px;
-    width: 100%;
-    align-items: center;
+/* Dark benefit cards */
+.benefit-card-dark {
+    display: flex; gap: 14px; padding: 20px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; align-items: flex-start;
 }
-.corridor-info .map-placeholder {
+.benefit-card-dark .icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0; color: white;
+}
+.benefit-card-dark h4 { font-size: 14px; margin-bottom: 3px; color: white; }
+.benefit-card-dark p { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+/* SPECS TABLE */
+.specs-table { max-width: 900px; width: 100%; border-collapse: collapse; }
+.specs-table th, .specs-table td { padding: 13px 18px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.specs-table th {
+    color: var(--accent); font-size: 12px; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 600; width: 35%;
+}
+.specs-table td { color: rgba(255,255,255,0.8); font-size: 14px; }
+
+/* CORRIDOR */
+.corridor-info { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; width: 100%; align-items: start; }
+.map-placeholder {
     background: linear-gradient(135deg, #1a3a5c, #2d5a8a);
-    border-radius: 16px;
-    padding: 40px;
-    color: white;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-radius: 16px; padding: 35px; color: white; min-height: 380px;
 }
-.station-list {
-    list-style: none;
-}
+.station-list { list-style: none; }
 .station-list li {
-    padding: 12px 0;
-    border-left: 3px solid var(--accent);
-    padding-left: 20px;
-    position: relative;
-    margin-left: 10px;
+    padding: 10px 0; border-left: 3px solid var(--accent);
+    padding-left: 18px; position: relative; margin-left: 10px;
 }
 .station-list li::before {
-    content: '';
-    width: 14px;
-    height: 14px;
-    background: var(--accent);
-    border-radius: 50%;
-    position: absolute;
-    left: -8px;
-    top: 14px;
+    content: ''; width: 12px; height: 12px; background: var(--accent);
+    border-radius: 50%; position: absolute; left: -7px; top: 13px;
 }
-.station-list li .name {
-    font-weight: 600;
-    font-size: 15px;
-}
-.station-list li .km {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-}
-
-/* SECTION IMAGES */
-.sections-gallery {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-    max-width: 1200px;
-    width: 100%;
-}
-.sections-gallery .section-thumb {
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-.sections-gallery .section-thumb:hover { transform: scale(1.05); }
-.sections-gallery .section-thumb img {
-    width: 100%;
-    aspect-ratio: 16/10;
-    object-fit: cover;
-    display: block;
-}
-.sections-gallery .section-thumb .overlay-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: white;
-    padding: 20px 8px 8px;
-    font-size: 11px;
-    font-weight: 500;
-}
+.station-list li .name { font-weight: 600; font-size: 14px; }
+.station-list li .km { font-size: 11px; color: rgba(255,255,255,0.5); }
 
 /* COST */
-.cost-breakdown {
-    max-width: 800px;
-    width: 100%;
-}
+.cost-breakdown { max-width: 800px; width: 100%; }
 .cost-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.cost-item .name {
-    font-size: 15px;
-    color: rgba(255,255,255,0.8);
-}
+.cost-item .name { font-size: 14px; color: rgba(255,255,255,0.8); }
 .cost-item .bar-container {
-    flex: 1;
-    margin: 0 30px;
-    height: 8px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 4px;
-    overflow: hidden;
+    flex: 1; margin: 0 25px; height: 8px;
+    background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;
 }
-.cost-item .bar {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 4px;
-}
-.cost-item .amount {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--accent);
-    min-width: 120px;
-    text-align: right;
-}
-
-/* FOOTER SLIDE */
-.slide-footer {
-    background: linear-gradient(135deg, #0d1b2a, #1a3a5c);
-    text-align: center;
-    color: white;
-}
-.slide-footer h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-.slide-footer p {
-    font-size: 16px;
-    color: rgba(255,255,255,0.6);
-    max-width: 600px;
-    margin: 0 auto 30px;
-    line-height: 1.7;
-}
-.contact-grid {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    margin-top: 30px;
-}
-.contact-item {
-    text-align: center;
-}
-.contact-item .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--accent);
-    margin-bottom: 6px;
-}
-.contact-item .value {
-    font-size: 14px;
-    color: rgba(255,255,255,0.8);
-}
+.cost-item .bar { height: 100%; background: var(--accent); border-radius: 4px; }
+.cost-item .amount { font-size: 14px; font-weight: 600; color: var(--accent); min-width: 110px; text-align: right; }
 
 /* NAV */
 .nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(13,27,42,0.95);
-    backdrop-filter: blur(10px);
-    padding: 12px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(13,27,42,0.95); backdrop-filter: blur(10px);
+    padding: 10px 25px; display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.nav-bar .brand {
-    color: var(--accent);
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-.nav-bar .links {
-    display: flex;
-    gap: 24px;
-}
+.nav-bar .brand { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: 1px; }
+.nav-bar .links { display: flex; gap: 20px; }
 .nav-bar .links a {
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    font-size: 13px;
-    transition: color 0.3s;
+    color: rgba(255,255,255,0.6); text-decoration: none; font-size: 12px; transition: color 0.3s;
 }
 .nav-bar .links a:hover { color: var(--accent); }
+
+/* COMPARISON TABLE */
+.comp-table { width: 100%; max-width: 1000px; border-collapse: collapse; font-size: 13px; }
+.comp-table thead tr { background: var(--primary); color: white; }
+.comp-table th, .comp-table td { padding: 12px; text-align: center; }
+.comp-table th:first-child, .comp-table td:first-child { text-align: left; }
+.comp-table tbody tr:nth-child(even) { background: #f8f8f8; }
+.comp-table .good { color: var(--accent2); font-weight: 700; }
+.comp-table .bad { color: #dc3545; }
+
+/* CONTACT */
+.contact-grid { display: flex; gap: 35px; justify-content: center; margin-top: 25px; flex-wrap: wrap; }
+.contact-item { text-align: center; }
+.contact-item .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 5px; }
+.contact-item .value { font-size: 13px; color: rgba(255,255,255,0.8); }
 
 @media print {
     .nav-bar { display: none; }
     .slide { page-break-after: always; min-height: auto; padding: 30px; }
 }
-
-/* LOGOS BAR */
-.logos-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-.logo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-.logo-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 700;
-    border: 2px solid rgba(255,255,255,0.2);
-}
-.logo-icon.vk { background: linear-gradient(135deg, #1a5c3a, #2d8a4e); color: white; }
-.logo-icon.ac { background: linear-gradient(135deg, #c0392b, #e74c3c); color: white; }
-.logo-icon.mw { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; }
-.logo-icon.enu { background: linear-gradient(135deg, #2c3e50, #34495e); color: white; }
-.logo-name {
-    font-size: 11px;
-    color: rgba(255,255,255,0.6);
-    text-align: center;
-    max-width: 120px;
-    line-height: 1.3;
-}
-.prepared-by {
-    margin-top: 30px;
-    padding: 20px 40px;
-    border: 1px solid rgba(232,164,28,0.3);
-    border-radius: 12px;
-    background: rgba(232,164,28,0.05);
-    text-align: center;
-}
-.prepared-by .name {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 4px;
-}
-.prepared-by .role {
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-}
-.prepared-for {
-    margin-top: 16px;
-    text-align: center;
-}
-.prepared-for .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 6px;
-}
-.prepared-for .org {
-    font-size: 16px;
-    color: rgba(255,255,255,0.8);
-    font-weight: 500;
-}
-.prepared-for .sub {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    margin-top: 2px;
-}
-
 @media (max-width: 768px) {
-    .slide-title h1 { font-size: 32px; }
+    .slide-title h1 { font-size: 30px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .benefits-grid { grid-template-columns: 1fr; }
-    .comparison-grid { grid-template-columns: 1fr; }
-    .corridor-info { grid-template-columns: 1fr; }
+    .benefits-grid, .corridor-info { grid-template-columns: 1fr; }
+    .ref-grid { grid-template-columns: 1fr; }
     .sections-gallery { grid-template-columns: repeat(2, 1fr); }
-    .logos-bar { gap: 20px; }
-    .logo-icon { width: 60px; height: 60px; font-size: 20px; }
+    .logos-bar { gap: 15px; }
+    .logo-item img { height: 50px; }
 }
 </style>
 </head>
@@ -591,12 +287,14 @@ body {
 
 <!-- NAV -->
 <nav class="nav-bar">
-    <div class="brand">MONORAIL PROPOSAL</div>
+    <div class="brand">VK | MONORAIL PROPOSAL</div>
     <div class="links">
-        <a href="#overview">Overview</a>
+        <a href="#title">Home</a>
         <a href="#problem">Problem</a>
+        <a href="#reference">Reference</a>
         <a href="#solution">Solution</a>
         <a href="#visualization">Visualization</a>
+        <a href="#cross-section">Engineering</a>
         <a href="#specs">Specifications</a>
         <a href="#stations">Stations</a>
         <a href="#benefits">Benefits</a>
@@ -604,41 +302,34 @@ body {
     </div>
 </nav>
 
-<!-- SLIDE 1: TITLE -->
+<!-- ========== SLIDE 1: TITLE ========== -->
 <section class="slide slide-title" id="title">
     <div class="slide-number">01</div>
-
-    <!-- Company Logos -->
     <div class="logos-bar">
         <div class="logo-item">
-            <div class="logo-icon vk">VK</div>
-            <div class="logo-name">Venture Kubariho<br>Transport Consultants</div>
+            <img src="assets/arab_contractors_logo.gif" alt="Arab Contractors">
+            <div class="logo-text">Arab Contractors<br>Uganda Limited</div>
         </div>
         <div class="logo-item">
-            <div class="logo-icon ac">AC</div>
-            <div class="logo-name">Arab Contractors<br>Uganda Limited</div>
+            <img src="assets/uganda_coat_of_arms.png" alt="Republic of Uganda">
+            <div class="logo-text">Ministry of Works<br>&amp; Transport</div>
         </div>
         <div class="logo-item">
-            <div class="logo-icon mw">MoWT</div>
-            <div class="logo-name">Ministry of Works<br>&amp; Transport, Uganda</div>
-        </div>
-        <div class="logo-item">
-            <div class="logo-icon enu">ENU</div>
-            <div class="logo-name">Edinburgh Napier<br>University</div>
+            <img src="assets/edinburgh_napier_logo.png" alt="Edinburgh Napier University">
+            <div class="logo-text">Edinburgh Napier<br>University</div>
         </div>
     </div>
 
     <h1>Monorail Transit System<br>Proposal</h1>
     <h2>Kampala &mdash; Mukono Road Corridor, Uganda</h2>
     <p class="subtitle">
-        A straddle-beam monorail solution to reduce road deterioration,
-        ease traffic congestion, and provide reliable mass transit
-        for East Africa's fastest-growing urban corridor.
+        A straddle-beam monorail solution based on the Cairo Monorail model to reduce road deterioration,
+        ease traffic congestion, and provide reliable mass transit for East Africa's fastest-growing urban corridor.
     </p>
 
     <div class="prepared-by">
         <div class="name">Venture Kubariho</div>
-        <div class="role">Transport Planning &amp; Engineering Consultant<br>BSc Transport Planning &amp; Engineering, Edinburgh Napier University</div>
+        <div class="role">Transport Planning &amp; Engineering Expert</div>
     </div>
     <div class="prepared-for">
         <div class="label">Prepared For</div>
@@ -648,15 +339,15 @@ body {
 
     <div class="meta">
         <div class="meta-item">
-            <div class="label">Corridor Length</div>
+            <div class="label">Corridor</div>
             <div class="value">~25 km</div>
         </div>
         <div class="meta-item">
-            <div class="label">Survey Date</div>
-            <div class="value">October 2024</div>
+            <div class="label">Survey</div>
+            <div class="value">DJI Drone, Oct 2024</div>
         </div>
         <div class="meta-item">
-            <div class="label">Proposal Date</div>
+            <div class="label">Date</div>
             <div class="value">April 2026</div>
         </div>
         <div class="meta-item">
@@ -666,605 +357,414 @@ body {
     </div>
 </section>
 
-<!-- SLIDE 2: THE PROBLEM -->
+<!-- ========== SLIDE 2: THE PROBLEM ========== -->
 <section class="slide slide-content" id="problem">
-    <div class="slide-number" style="color: var(--gray);">02</div>
+    <div class="slide-number" style="color:var(--gray)">02</div>
     <div class="section-header">
         <div class="tag">The Problem</div>
         <h2>Kampala-Mukono Road Under Pressure</h2>
-        <p>The 25km corridor carries over 50,000 vehicles daily, causing severe congestion, road deterioration, and economic losses estimated at $2.8 million per day.</p>
+        <p>The 25km corridor carries over 50,000 vehicles daily, causing severe congestion, accelerated road deterioration, and economic losses. The road, originally designed for lighter traffic, now serves as the primary freight and commuter artery connecting Kampala to eastern Uganda and Kenya.</p>
     </div>
-    <div class="stats-grid" style="max-width: 900px;">
-        <div class="stat-card" style="background:white; border-color:#eee;">
-            <div class="number" style="color:#dc3545;">50K+</div>
-            <div class="unit" style="color:#999;">vehicles</div>
-            <div class="label" style="color:#666;">Daily traffic volume on the corridor</div>
+    <div class="stats-grid" style="max-width:900px">
+        <div class="stat-card" style="background:white;border-color:#eee">
+            <div class="number" style="color:#dc3545">50K+</div>
+            <div class="unit" style="color:#999">vehicles/day</div>
+            <div class="label" style="color:#666">Average Annual Daily Traffic (AADT) exceeding design capacity by 200%</div>
         </div>
-        <div class="stat-card" style="background:white; border-color:#eee;">
-            <div class="number" style="color:#dc3545;">3hrs</div>
-            <div class="unit" style="color:#999;">average</div>
-            <div class="label" style="color:#666;">Peak journey time for 25km (should be 30min)</div>
+        <div class="stat-card" style="background:white;border-color:#eee">
+            <div class="number" style="color:#dc3545">3hrs</div>
+            <div class="unit" style="color:#999">peak journey</div>
+            <div class="label" style="color:#666">Peak-hour travel time for 25km (design speed: 30 minutes)</div>
         </div>
-        <div class="stat-card" style="background:white; border-color:#eee;">
-            <div class="number" style="color:#dc3545;">$2.8M</div>
-            <div class="unit" style="color:#999;">per day</div>
-            <div class="label" style="color:#666;">Economic losses from congestion &amp; delays</div>
+        <div class="stat-card" style="background:white;border-color:#eee">
+            <div class="number" style="color:#dc3545">$2.8M</div>
+            <div class="unit" style="color:#999">daily loss</div>
+            <div class="label" style="color:#666">Economic losses from congestion, fuel waste, and productivity delays</div>
         </div>
-        <div class="stat-card" style="background:white; border-color:#eee;">
-            <div class="number" style="color:#dc3545;">40%</div>
-            <div class="unit" style="color:#999;">deteriorated</div>
-            <div class="label" style="color:#666;">Road surface requiring repair within 5 years</div>
+        <div class="stat-card" style="background:white;border-color:#eee">
+            <div class="number" style="color:#dc3545">40%</div>
+            <div class="unit" style="color:#999">deteriorated</div>
+            <div class="label" style="color:#666">Pavement requiring rehabilitation within 5 years due to overloading</div>
         </div>
     </div>
 </section>
 
-<!-- SLIDE 3: DRONE SURVEY -->
-<section class="slide slide-dark" id="overview">
+<!-- ========== SLIDE 3: DRONE SURVEY ========== -->
+<section class="slide slide-dark" id="survey">
     <div class="slide-number">03</div>
     <div class="section-header">
         <div class="tag">Aerial Survey</div>
         <h2>Drone Survey of the Corridor</h2>
-        <p>DJI aerial platform survey conducted October 2024 capturing the full road geometry, traffic patterns, and urban context.</p>
+        <p>DJI aerial platform survey conducted October 2024. COLMAP Structure-from-Motion reconstruction produced 26,757 3D points from 117 sequential frames, enabling geometric analysis of the road alignment, cross-falls, and median width.</p>
     </div>
     <div class="sections-gallery">
-        <div class="section-thumb">
-            <img src="keyframes/key_01.jpg" alt="Section A">
-            <div class="overlay-label">Section A: Town Centre</div>
-        </div>
-        <div class="section-thumb">
-            <img src="keyframes/key_02.jpg" alt="Section B">
-            <div class="overlay-label">Section B: Commercial Zone</div>
-        </div>
-        <div class="section-thumb">
-            <img src="keyframes/key_03.jpg" alt="Section C">
-            <div class="overlay-label">Section C: Suburban</div>
-        </div>
-        <div class="section-thumb">
-            <img src="keyframes/key_05.jpg" alt="Section E">
-            <div class="overlay-label">Section E: Curve Zone</div>
-        </div>
-        <div class="section-thumb">
-            <img src="keyframes/key_10.jpg" alt="Section J">
-            <div class="overlay-label">Section J: Kampala Entry</div>
-        </div>
+        <div class="section-thumb"><img src="keyframes/key_01.jpg" alt="Section A"><div class="overlay-label">Mukono Town Centre</div></div>
+        <div class="section-thumb"><img src="keyframes/key_02.jpg" alt="Section B"><div class="overlay-label">Commercial Zone</div></div>
+        <div class="section-thumb"><img src="keyframes/key_04.jpg" alt="Section D"><div class="overlay-label">Suburban Corridor</div></div>
+        <div class="section-thumb"><img src="keyframes/key_05.jpg" alt="Section E"><div class="overlay-label">Curve Transition</div></div>
+        <div class="section-thumb"><img src="keyframes/key_10.jpg" alt="Section J"><div class="overlay-label">Kampala Entry</div></div>
     </div>
 </section>
 
-<!-- SLIDE 4: THE SOLUTION -->
-<section class="slide slide-content" id="solution">
-    <div class="slide-number" style="color: var(--gray);">04</div>
+<!-- ========== SLIDE 4: CAIRO MONORAIL REFERENCE ========== -->
+<section class="slide slide-content" id="reference">
+    <div class="slide-number" style="color:var(--gray)">04</div>
     <div class="section-header">
-        <div class="tag">The Solution</div>
-        <h2>Straddle-Beam Monorail System</h2>
-        <p>An elevated monorail running above the road median, requiring zero road surface area and providing grade-separated mass transit.</p>
+        <div class="tag">Design Reference</div>
+        <h2>Cairo Monorail: The African Benchmark</h2>
+        <p>The proposed system is modelled on the Cairo Monorail &mdash; Africa's first and largest monorail, built by a consortium including Arab Contractors and Alstom. The 98.5km dual-line system uses Alstom INNOVIA 300 straddle-beam technology, directly applicable to the Kampala-Mukono corridor.</p>
     </div>
-    <div class="benefits-grid">
-        <div class="benefit-card">
-            <div class="icon green">&#9651;</div>
-            <div>
-                <h4>Elevated Guideway</h4>
-                <p>Pre-stressed concrete beam supported by Y-shaped piers at 25-30m intervals. 8-12m clearance above road for heavy vehicle passage.</p>
+    <div class="ref-grid">
+        <div class="ref-card" style="background:white;border-color:#eee">
+            <img src="assets/cairo_monorail_1.jpg" alt="Cairo Monorail Construction">
+            <div class="caption" style="color:#333">
+                <strong>Cairo Monorail &mdash; Guideway Under Construction</strong>
+                6th of October Line. Y-shaped piers and pre-cast guideway segments. Arab Contractors lead construction partner.
             </div>
         </div>
-        <div class="benefit-card">
-            <div class="icon blue">&#9889;</div>
-            <div>
-                <h4>Electric Power Supply</h4>
-                <p>750V DC third rail integrated into the guideway beam with overhead catenary backup. Zero local emissions.</p>
+        <div class="ref-card" style="background:white;border-color:#eee">
+            <img src="assets/sao_paulo_monorail.jpg" alt="INNOVIA 300 Monorail">
+            <div class="caption" style="color:#333">
+                <strong>Bombardier INNOVIA 300 (S&atilde;o Paulo Line 15)</strong>
+                Same rolling stock technology selected for Cairo. 4-car automated consist, 800 passengers per train. GoA4 driverless operation.
             </div>
         </div>
-        <div class="benefit-card">
-            <div class="icon orange">&#9632;</div>
-            <div>
-                <h4>Concrete Support Piers</h4>
-                <p>Reinforced concrete Y-columns placed in the road median. Foundation footprint of only 2m x 2m per pier.</p>
-            </div>
-        </div>
-        <div class="benefit-card">
-            <div class="icon purple">&#9733;</div>
-            <div>
-                <h4>Passenger Stations</h4>
-                <p>8 elevated stations with platform screen doors, escalators, lifts, and covered waiting areas. 3-minute headway in peak hours.</p>
-            </div>
-        </div>
-        <div class="benefit-card">
-            <div class="icon green">&#9872;</div>
-            <div>
-                <h4>Safety Barriers</h4>
-                <p>Crash-rated barriers around pier bases, pedestrian fencing along the guideway, and anti-climb protection at stations.</p>
-            </div>
-        </div>
-        <div class="benefit-card">
-            <div class="icon blue">&#8644;</div>
-            <div>
-                <h4>Road User Protection</h4>
-                <p>Pier impact barriers rated to MASH TL-4 standard. Drainage integration to prevent water pooling. Clear signage and lighting.</p>
+        <div class="ref-card" style="background:white;border-color:#eee">
+            <img src="assets/chongqing_monorail.jpg" alt="Chongqing Monorail">
+            <div class="caption" style="color:#333">
+                <strong>Chongqing Monorail &mdash; Above Urban Road</strong>
+                World's busiest monorail (1.2M daily). Demonstrates elevated guideway above existing road infrastructure with minimal footprint.
             </div>
         </div>
     </div>
-</section>
-
-<!-- SLIDE 5: VISUALIZATION BEFORE/AFTER -->
-<section class="slide slide-dark" id="visualization">
-    <div class="slide-number">05</div>
-    <div class="section-header">
-        <div class="tag">Visualization</div>
-        <h2>Before &amp; After: Monorail Superimposed</h2>
-        <p>Drone survey frames with proposed monorail infrastructure overlaid showing pillars, guideway, power supply, train, and safety barriers.</p>
-    </div>
-
-    <div class="image-showcase" id="slideshow">
-        <img id="showcase-img" src="output/compare_key_01.jpg" alt="Comparison">
-        <div class="nav-dots" id="dots"></div>
-    </div>
-</section>
-
-<!-- SLIDE 6: RENDERED VIEWS -->
-<section class="slide slide-content">
-    <div class="slide-number" style="color: var(--gray);">06</div>
-    <div class="section-header">
-        <div class="tag">Rendered Views</div>
-        <h2>Proposed Monorail Along the Corridor</h2>
-        <p>10 key sections showing the monorail system integrated with the existing road infrastructure.</p>
-    </div>
-    <div class="sections-gallery" style="grid-template-columns: repeat(5, 1fr);">
-        <div class="section-thumb">
-            <img src="output/monorail_key_01.jpg" alt="Section A">
-            <div class="overlay-label">Town Centre</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_02.jpg" alt="Section B">
-            <div class="overlay-label">Central Station</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_03.jpg" alt="Section C">
-            <div class="overlay-label">Suburban</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_04.jpg" alt="Section D">
-            <div class="overlay-label">Median Alignment</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_05.jpg" alt="Section E">
-            <div class="overlay-label">Curve Zone</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_06.jpg" alt="Section F">
-            <div class="overlay-label">Namanve Station</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_07.jpg" alt="Section G">
-            <div class="overlay-label">Industrial Zone</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_08.jpg" alt="Section H">
-            <div class="overlay-label">Protection Zone</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_09.jpg" alt="Section I">
-            <div class="overlay-label">Approaching Kampala</div>
-        </div>
-        <div class="section-thumb">
-            <img src="output/monorail_key_10.jpg" alt="Section J">
-            <div class="overlay-label">Kampala Entry</div>
-        </div>
-    </div>
-</section>
-
-<!-- SLIDE 7: TECHNICAL SPECS -->
-<section class="slide slide-dark" id="specs">
-    <div class="slide-number">07</div>
-    <div class="section-header">
-        <div class="tag">Technical</div>
-        <h2>System Specifications</h2>
-        <p>Based on proven straddle-beam monorail technology (Hitachi, BYD SkyRail, Bombardier INNOVIA class).</p>
-    </div>
-    <table class="specs-table">
-        <tr><th>System Type</th><td>Straddle-Beam Monorail (rubber-tyred)</td></tr>
-        <tr><th>Guideway Beam</th><td>Pre-stressed concrete, 850mm wide, 1500mm deep, PC steel strand</td></tr>
-        <tr><th>Support Piers</th><td>Reinforced concrete Y-columns, 25-30m span, 2m x 2m footing</td></tr>
-        <tr><th>Track Gauge</th><td>850mm beam width (straddle configuration)</td></tr>
-        <tr><th>Clearance Height</th><td>8-12m above road surface (min. 5.5m for vehicle passage)</td></tr>
-        <tr><th>Power Supply</th><td>750V DC third rail + overhead catenary backup</td></tr>
-        <tr><th>Train Consist</th><td>4-car articulated, 60m length, 800 passengers (crush load)</td></tr>
-        <tr><th>Maximum Speed</th><td>80 km/h (design) / 65 km/h (commercial average)</td></tr>
-        <tr><th>Capacity</th><td>Up to 40,000 passengers per hour per direction (pphpd)</td></tr>
-        <tr><th>Headway</th><td>3 min peak / 6 min off-peak / 90 sec minimum design</td></tr>
-        <tr><th>Signalling</th><td>CBTC (Communications-Based Train Control) with ATO/ATP</td></tr>
-        <tr><th>Safety Systems</th><td>Platform screen doors, CCTV, fire suppression, emergency walkway</td></tr>
-        <tr><th>Road Protection</th><td>MASH TL-4 crash barriers, pedestrian fencing, LED warning lights</td></tr>
-    </table>
-</section>
-
-<!-- SLIDE 8: STATION PLAN -->
-<section class="slide slide-content" id="stations">
-    <div class="slide-number" style="color: var(--gray);">08</div>
-    <div class="section-header">
-        <div class="tag">Stations</div>
-        <h2>Proposed Station Locations</h2>
-        <p>8 stations spaced approximately 3km apart, serving key population centres and transport interchange points.</p>
-    </div>
-    <div class="corridor-info">
-        <div class="map-placeholder">
-            <h3 style="color: var(--accent); margin-bottom: 20px;">CORRIDOR ALIGNMENT</h3>
-            <ul class="station-list">
-                <li><span class="name">Kampala Central</span><br><span class="km">KM 0.0 — CBD terminus, interchange with BRT &amp; taxi</span></li>
-                <li><span class="name">Kireka</span><br><span class="km">KM 4.0 — Major residential area, bus interchange</span></li>
-                <li><span class="name">Bweyogerere</span><br><span class="km">KM 7.5 — Commercial hub, park-and-ride</span></li>
-                <li><span class="name">Namboole</span><br><span class="km">KM 10.0 — Stadium, events &amp; sports complex</span></li>
-                <li><span class="name">Namanve</span><br><span class="km">KM 14.0 — Industrial park, employment centre</span></li>
-                <li><span class="name">Seeta</span><br><span class="km">KM 17.5 — Residential suburb, schools</span></li>
-                <li><span class="name">Mukono Central</span><br><span class="km">KM 22.0 — Town centre, university, markets</span></li>
-                <li><span class="name">Mukono East</span><br><span class="km">KM 25.0 — Eastern terminus, future extension</span></li>
-            </ul>
-        </div>
-        <div>
-            <h3 style="color: var(--primary); margin-bottom: 20px;">Station Design Features</h3>
-            <div style="display: flex; flex-direction: column; gap: 16px;">
-                <div class="benefit-card" style="margin:0;">
-                    <div class="icon green">&#8679;</div>
-                    <div>
-                        <h4>Elevated Platforms</h4>
-                        <p>8-12m above ground with escalators, lifts, and stairs. Platform screen doors for passenger safety.</p>
-                    </div>
-                </div>
-                <div class="benefit-card" style="margin:0;">
-                    <div class="icon blue">&#9730;</div>
-                    <div>
-                        <h4>Weather Protection</h4>
-                        <p>Full canopy coverage over platforms. Enclosed waiting areas with natural ventilation.</p>
-                    </div>
-                </div>
-                <div class="benefit-card" style="margin:0;">
-                    <div class="icon orange">&#9881;</div>
-                    <div>
-                        <h4>Accessibility</h4>
-                        <p>Universal access with tactile paving, audio announcements, and level boarding.</p>
-                    </div>
-                </div>
-                <div class="benefit-card" style="margin:0;">
-                    <div class="icon purple">&#9041;</div>
-                    <div>
-                        <h4>Integration</h4>
-                        <p>Boda-boda parking, taxi ranks, and bus stops at ground level for seamless interchange.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SLIDE 9: KEY BENEFITS -->
-<section class="slide slide-dark" id="benefits">
-    <div class="slide-number">09</div>
-    <div class="section-header">
-        <div class="tag">Impact</div>
-        <h2>Key Benefits</h2>
-        <p>Why monorail is the optimal solution for the Kampala-Mukono corridor.</p>
-    </div>
-    <div class="stats-grid">
-        <div class="stat-card">
-            <div class="number">0%</div>
-            <div class="unit">road surface used</div>
-            <div class="label">Elevated guideway requires only pier footings in the median</div>
-        </div>
-        <div class="stat-card">
-            <div class="number">30K</div>
-            <div class="unit">passengers/day removed</div>
-            <div class="label">Taken off the road surface, reducing congestion and wear</div>
-        </div>
-        <div class="stat-card">
-            <div class="number">25min</div>
-            <div class="unit">end to end</div>
-            <div class="label">Kampala CBD to Mukono vs 3+ hours by road in peak</div>
-        </div>
-        <div class="stat-card">
-            <div class="number">60%</div>
-            <div class="unit">road life extension</div>
-            <div class="label">Reduced heavy vehicle loading extends pavement life</div>
-        </div>
-        <div class="stat-card">
-            <div class="number">0</div>
-            <div class="unit">emissions (local)</div>
-            <div class="label">All-electric operation, can use renewable energy sources</div>
-        </div>
-        <div class="stat-card">
-            <div class="number">24/7</div>
-            <div class="unit">all-weather</div>
-            <div class="label">Grade-separated, immune to road flooding and traffic incidents</div>
-        </div>
-        <div class="stat-card">
-            <div class="number">40K</div>
-            <div class="unit">pphpd capacity</div>
-            <div class="label">Scalable to match demand growth over 30-year design life</div>
-        </div>
-        <div class="stat-card">
-            <div class="number">3yr</div>
-            <div class="unit">construction</div>
-            <div class="label">Precast segments allow rapid construction with minimal road closure</div>
-        </div>
-    </div>
-</section>
-
-<!-- SLIDE 10: COST ESTIMATE -->
-<section class="slide slide-dark" id="cost" style="background: linear-gradient(180deg, #1a3a5c, #0d1b2a);">
-    <div class="slide-number">10</div>
-    <div class="section-header">
-        <div class="tag">Financial</div>
-        <h2>Cost Estimate</h2>
-        <p>Preliminary cost breakdown based on comparable projects (Mumbai, S&atilde;o Paulo, Bangkok).</p>
-    </div>
-    <div class="cost-breakdown">
-        <div class="cost-item">
-            <span class="name">Guideway &amp; Piers (25km)</span>
-            <div class="bar-container"><div class="bar" style="width:75%"></div></div>
-            <span class="amount">$600M</span>
-        </div>
-        <div class="cost-item">
-            <span class="name">Stations (8 elevated)</span>
-            <div class="bar-container"><div class="bar" style="width:25%"></div></div>
-            <span class="amount">$200M</span>
-        </div>
-        <div class="cost-item">
-            <span class="name">Rolling Stock (20 trains)</span>
-            <div class="bar-container"><div class="bar" style="width:30%"></div></div>
-            <span class="amount">$240M</span>
-        </div>
-        <div class="cost-item">
-            <span class="name">Systems (power, signalling, comms)</span>
-            <div class="bar-container"><div class="bar" style="width:20%"></div></div>
-            <span class="amount">$160M</span>
-        </div>
-        <div class="cost-item">
-            <span class="name">Depot &amp; Maintenance Facility</span>
-            <div class="bar-container"><div class="bar" style="width:12%"></div></div>
-            <span class="amount">$100M</span>
-        </div>
-        <div class="cost-item">
-            <span class="name">Land, Utilities, Contingency</span>
-            <div class="bar-container"><div class="bar" style="width:15%"></div></div>
-            <span class="amount">$120M</span>
-        </div>
-        <div class="cost-item" style="border-top: 2px solid var(--accent); border-bottom: none; padding-top: 20px;">
-            <span class="name" style="font-weight:700; color: white;">TOTAL ESTIMATED COST</span>
-            <div class="bar-container"><div class="bar" style="width:100%; background: var(--accent2);"></div></div>
-            <span class="amount" style="font-size: 20px;">$1.42B</span>
-        </div>
-    </div>
-    <p style="margin-top: 30px; font-size: 13px; color: rgba(255,255,255,0.4); max-width: 700px; text-align: center;">
-        Cost per km: ~$57M. Comparable to Mumbai Monorail ($53M/km), S&atilde;o Paulo Line 15 ($62M/km).
-        Financing through multilateral development banks (AfDB, World Bank), PPP, and government bonds.
-    </p>
-</section>
-
-<!-- SLIDE 11: COMPARISON WITH ALTERNATIVES -->
-<section class="slide slide-content">
-    <div class="slide-number" style="color: var(--gray);">11</div>
-    <div class="section-header">
-        <div class="tag">Analysis</div>
-        <h2>Why Monorail Over Alternatives?</h2>
-        <p>Comparison with other mass transit options for the Kampala-Mukono corridor.</p>
-    </div>
-    <div style="max-width: 1000px; width: 100%; overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-            <thead>
-                <tr style="background: var(--primary); color: white;">
-                    <th style="padding: 14px; text-align: left;">Criteria</th>
-                    <th style="padding: 14px; text-align: center;">Monorail</th>
-                    <th style="padding: 14px; text-align: center;">BRT</th>
-                    <th style="padding: 14px; text-align: center;">Light Rail</th>
-                    <th style="padding: 14px; text-align: center;">Metro</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="background: #f8f8f8;">
-                    <td style="padding: 12px; font-weight: 500;">Road surface impact</td>
-                    <td style="padding: 12px; text-align: center; color: var(--accent2); font-weight: 700;">None</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">High (dedicated lanes)</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">High (at-grade tracks)</td>
-                    <td style="padding: 12px; text-align: center; color: var(--accent2);">None (underground)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 12px; font-weight: 500;">Cost per km</td>
-                    <td style="padding: 12px; text-align: center;">$40-60M</td>
-                    <td style="padding: 12px; text-align: center; color: var(--accent2); font-weight: 700;">$5-15M</td>
-                    <td style="padding: 12px; text-align: center;">$30-50M</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">$150-300M</td>
-                </tr>
-                <tr style="background: #f8f8f8;">
-                    <td style="padding: 12px; font-weight: 500;">Construction disruption</td>
-                    <td style="padding: 12px; text-align: center; color: var(--accent2); font-weight: 700;">Low (precast piers)</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">High (road rebuild)</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">Very high</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">Extreme (tunnelling)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 12px; font-weight: 500;">Capacity (pphpd)</td>
-                    <td style="padding: 12px; text-align: center;">40,000</td>
-                    <td style="padding: 12px; text-align: center;">10,000</td>
-                    <td style="padding: 12px; text-align: center;">20,000</td>
-                    <td style="padding: 12px; text-align: center; color: var(--accent2); font-weight: 700;">60,000</td>
-                </tr>
-                <tr style="background: #f8f8f8;">
-                    <td style="padding: 12px; font-weight: 500;">Reduces road deterioration</td>
-                    <td style="padding: 12px; text-align: center; color: var(--accent2); font-weight: 700;">Yes</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">No (increases it)</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">No</td>
-                    <td style="padding: 12px; text-align: center; color: var(--accent2);">Yes</td>
-                </tr>
-                <tr>
-                    <td style="padding: 12px; font-weight: 500;">Build timeline</td>
-                    <td style="padding: 12px; text-align: center; color: var(--accent2); font-weight: 700;">3-4 years</td>
-                    <td style="padding: 12px; text-align: center;">2-3 years</td>
-                    <td style="padding: 12px; text-align: center;">4-5 years</td>
-                    <td style="padding: 12px; text-align: center; color: #dc3545;">8-12 years</td>
-                </tr>
-                <tr style="background: var(--accent); color: var(--dark); font-weight: 700;">
-                    <td style="padding: 14px;">OVERALL SUITABILITY</td>
-                    <td style="padding: 14px; text-align: center; font-size: 18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
-                    <td style="padding: 14px; text-align: center; font-size: 18px;">&#9733;&#9733;&#9734;&#9734;&#9734;</td>
-                    <td style="padding: 14px; text-align: center; font-size: 18px;">&#9733;&#9733;&#9733;&#9734;&#9734;</td>
-                    <td style="padding: 14px; text-align: center; font-size: 18px;">&#9733;&#9733;&#9733;&#9734;&#9734;</td>
-                </tr>
-            </tbody>
+    <div style="max-width:1100px;width:100%;margin-top:30px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:var(--primary);color:white">
+                <th style="padding:10px;text-align:left">Cairo Monorail Specification</th>
+                <th style="padding:10px;text-align:left">Value</th>
+                <th style="padding:10px;text-align:left">Kampala-Mukono Adaptation</th>
+            </tr>
+            <tr style="background:#f8f8f8"><td style="padding:10px">Total Length</td><td style="padding:10px">98.5 km (2 lines)</td><td style="padding:10px">25 km (single line, Phase 1)</td></tr>
+            <tr><td style="padding:10px">Builder</td><td style="padding:10px">Arab Contractors + Alstom + Orascom</td><td style="padding:10px">Arab Contractors Uganda + Alstom</td></tr>
+            <tr style="background:#f8f8f8"><td style="padding:10px">Rolling Stock</td><td style="padding:10px">Alstom INNOVIA 300 Monorail</td><td style="padding:10px">Same platform (proven in Africa)</td></tr>
+            <tr><td style="padding:10px">Stations</td><td style="padding:10px">34 elevated stations</td><td style="padding:10px">8 elevated stations</td></tr>
+            <tr style="background:#f8f8f8"><td style="padding:10px">Contract Value</td><td style="padding:10px">$4.5 billion (both lines)</td><td style="padding:10px">~$1.4 billion (scaled)</td></tr>
+            <tr><td style="padding:10px">Capacity</td><td style="padding:10px">45,000 pphpd</td><td style="padding:10px">40,000 pphpd (design)</td></tr>
         </table>
     </div>
 </section>
 
-<!-- SLIDE 12: CASE STUDIES -->
-<section class="slide slide-dark">
-    <div class="slide-number">12</div>
+<!-- ========== SLIDE 5: THE SOLUTION ========== -->
+<section class="slide slide-dark" id="solution">
+    <div class="slide-number">05</div>
     <div class="section-header">
-        <div class="tag">Global Precedents</div>
-        <h2>Proven Monorail Systems Worldwide</h2>
-        <p>Straddle-beam monorails operate successfully in major cities across Asia and South America.</p>
+        <div class="tag">Proposed Solution</div>
+        <h2>Straddle-Beam Monorail System</h2>
+        <p>An elevated monorail running above the road median, requiring zero additional road surface and providing fully grade-separated mass transit. Based on proven Cairo/INNOVIA 300 technology.</p>
     </div>
-    <div class="benefits-grid" style="max-width: 1100px;">
-        <div class="benefit-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-            <div class="icon blue" style="background: rgba(0,150,255,0.15); color: white;">JP</div>
-            <div>
-                <h4 style="color: white;">Tokyo Monorail, Japan</h4>
-                <p style="color: rgba(255,255,255,0.6);">17.8 km, opened 1964. Carries 127,000 passengers daily. Connects Haneda Airport to central Tokyo. 60+ years of reliable service.</p>
-            </div>
+    <div class="benefits-grid" style="max-width:1100px">
+        <div class="benefit-card-dark">
+            <div class="icon green" style="background:rgba(0,200,100,0.15)">&#9651;</div>
+            <div><h4>Elevated Guideway</h4><p>Pre-stressed concrete box beam (850mm x 1500mm) supported by Y-shaped reinforced concrete piers at 25-30m intervals. 10m clearance above road for heavy vehicle passage.</p></div>
         </div>
-        <div class="benefit-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-            <div class="icon orange" style="background: rgba(255,150,0,0.15); color: white;">MY</div>
-            <div>
-                <h4 style="color: white;">KL Monorail, Malaysia</h4>
-                <p style="color: rgba(255,255,255,0.6);">8.6 km, 11 stations. Part of integrated transit network. 170,000 daily riders. Proved monorail viability in tropical developing-country context.</p>
-            </div>
+        <div class="benefit-card-dark">
+            <div class="icon blue" style="background:rgba(0,150,255,0.15)">&#9889;</div>
+            <div><h4>750V DC Power Supply</h4><p>Third rail integrated into guideway beam underside, with overhead catenary backup. Substations at 2km intervals. Compatible with Uganda's national grid at 11kV distribution.</p></div>
         </div>
-        <div class="benefit-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-            <div class="icon green" style="background: rgba(0,200,100,0.15); color: white;">BR</div>
-            <div>
-                <h4 style="color: white;">S&atilde;o Paulo Line 15, Brazil</h4>
-                <p style="color: rgba(255,255,255,0.6);">26.6 km when complete. Bombardier INNOVIA 300 trains. Serves dense urban corridors. Cost: $62M/km. Most relevant comparator.</p>
-            </div>
+        <div class="benefit-card-dark">
+            <div class="icon orange" style="background:rgba(255,150,0,0.15)">&#9632;</div>
+            <div><h4>Y-Shaped Concrete Piers</h4><p>Reinforced concrete columns in the road median. Foundation footprint 2m x 2m. Pre-cast segments for rapid erection with minimal road closure (night-time installation).</p></div>
         </div>
-        <div class="benefit-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-            <div class="icon purple" style="background: rgba(200,100,255,0.15); color: white;">IN</div>
-            <div>
-                <h4 style="color: white;">Mumbai Monorail, India</h4>
-                <p style="color: rgba(255,255,255,0.6);">19.5 km, 17 stations. Built in dense urban environment with minimal land acquisition. Cost: $53M/km. Developing-country benchmark.</p>
-            </div>
+        <div class="benefit-card-dark">
+            <div class="icon purple" style="background:rgba(200,100,255,0.15)">&#9733;</div>
+            <div><h4>8 Elevated Stations</h4><p>Platform screen doors, escalators/lifts, covered waiting areas. Platforms at guideway level (~12m above ground). Designed to NFPA 130 fire/life safety standards.</p></div>
         </div>
-        <div class="benefit-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-            <div class="icon blue" style="background: rgba(0,150,255,0.15); color: white;">CN</div>
-            <div>
-                <h4 style="color: white;">Chongqing Monorail, China</h4>
-                <p style="color: rgba(255,255,255,0.6);">98.5 km combined (Lines 2 &amp; 3). World's longest and busiest monorail network. 1.2 million daily passengers. Navigates extreme terrain.</p>
-            </div>
+        <div class="benefit-card-dark">
+            <div class="icon green" style="background:rgba(0,200,100,0.15)">&#9872;</div>
+            <div><h4>Road User Protection</h4><p>MASH TL-4 crash-rated barriers around all pier bases. Steel pedestrian fencing along the guideway alignment. LED warning signage at all pier locations. Anti-climb mesh at stations.</p></div>
         </div>
-        <div class="benefit-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-            <div class="icon orange" style="background: rgba(255,150,0,0.15); color: white;">EG</div>
-            <div>
-                <h4 style="color: white;">Cairo Monorail, Egypt</h4>
-                <p style="color: rgba(255,255,255,0.6);">98.5 km (under construction). Africa's first monorail. Alstom INNOVIA. $4.5B. Directly relevant as African precedent for Uganda.</p>
-            </div>
+        <div class="benefit-card-dark">
+            <div class="icon blue" style="background:rgba(0,150,255,0.15)">&#8644;</div>
+            <div><h4>CBTC Signalling</h4><p>Communications-Based Train Control with Automatic Train Operation (ATO GoA3/4). 90-second minimum design headway. Full CCTV coverage, fire suppression, and emergency walkway on guideway.</p></div>
         </div>
     </div>
 </section>
 
-<!-- SLIDE 13: 3D RECONSTRUCTION -->
+<!-- ========== SLIDE 6: VISUALIZATION ========== -->
+<section class="slide slide-dark" id="visualization">
+    <div class="slide-number">06</div>
+    <div class="section-header">
+        <div class="tag">Visualization</div>
+        <h2>Before &amp; After: Monorail Superimposed</h2>
+        <p>Drone survey frames with proposed monorail infrastructure digitally composited showing support piers, guideway beam, power catenary, rolling stock, and safety barriers along the road median.</p>
+    </div>
+    <div class="image-showcase" id="slideshow">
+        <img id="showcase-img" src="output/compare_key_01.jpg" alt="Before/After Comparison">
+        <div class="nav-dots" id="dots"></div>
+    </div>
+</section>
+
+<!-- ========== SLIDE 7: RENDERED GALLERY ========== -->
+<section class="slide slide-content">
+    <div class="slide-number" style="color:var(--gray)">07</div>
+    <div class="section-header">
+        <div class="tag">Corridor Sections</div>
+        <h2>Proposed Monorail Along the Route</h2>
+        <p>Ten key sections of the corridor showing the monorail system integrated with existing road infrastructure. Each view demonstrates how the elevated guideway follows the road alignment.</p>
+    </div>
+    <div class="sections-gallery" style="grid-template-columns:repeat(5,1fr)">
+        <div class="section-thumb"><img src="output/monorail_key_01.jpg" alt="A"><div class="overlay-label">Town Centre</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_02.jpg" alt="B"><div class="overlay-label">Central Station</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_03.jpg" alt="C"><div class="overlay-label">Suburban</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_04.jpg" alt="D"><div class="overlay-label">Median Alignment</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_05.jpg" alt="E"><div class="overlay-label">Curve Zone</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_06.jpg" alt="F"><div class="overlay-label">Namanve Station</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_07.jpg" alt="G"><div class="overlay-label">Industrial Zone</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_08.jpg" alt="H"><div class="overlay-label">Protection Zone</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_09.jpg" alt="I"><div class="overlay-label">Approaching KLA</div></div>
+        <div class="section-thumb"><img src="output/monorail_key_10.jpg" alt="J"><div class="overlay-label">Kampala Entry</div></div>
+    </div>
+</section>
+
+<!-- ========== SLIDE 8: CROSS-SECTION ========== -->
+<section class="slide slide-content" id="cross-section">
+    <div class="slide-number" style="color:var(--gray)">08</div>
+    <div class="section-header">
+        <div class="tag">Engineering Drawing</div>
+        <h2>Typical Road Cross-Section</h2>
+        <p>The monorail guideway is positioned above the existing road median, preserving all six traffic lanes, sidewalks, and drainage. The Y-shaped pier footing occupies only the 3m median strip.</p>
+    </div>
+    <div class="cross-section-container">
+        <img src="output/cross_section_road.jpg" alt="Road Cross-Section with Monorail">
+        <div class="fig-caption">Figure 8.1 &mdash; Typical cross-section showing 28m road with 3+3 lanes, raised median with monorail pier, 10m clearance, guideway beam, train envelope, and safety barriers. NTS.</div>
+    </div>
+</section>
+
+<!-- ========== SLIDE 9: 3D RECONSTRUCTION ========== -->
 <section class="slide slide-dark">
-    <div class="slide-number">13</div>
+    <div class="slide-number">09</div>
     <div class="section-header">
         <div class="tag">3D Survey</div>
-        <h2>3D Reconstruction of the Corridor</h2>
-        <p>COLMAP Structure-from-Motion reconstruction from 117 drone video frames producing 26,757 3D points.</p>
+        <h2>COLMAP 3D Reconstruction</h2>
+        <p>Structure-from-Motion photogrammetric reconstruction of the road corridor from 117 sequential drone frames. The resulting 26,757-point sparse cloud captures the road geometry, building frontages, and terrain profile.</p>
     </div>
-    <div class="comparison-grid" style="max-width: 1000px;">
-        <div class="comparison-card" style="border: 1px solid rgba(255,255,255,0.1);">
-            <img src="output/3d_topdown.jpg" alt="Top-down 3D view">
-            <div class="caption" style="background: var(--primary); color: white;">Top-Down View &mdash; Road Corridor Geometry</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;width:100%">
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.1)">
+            <img src="output/3d_topdown.jpg" alt="3D Top-Down" style="width:100%;display:block">
+            <div style="padding:12px;font-size:12px;color:rgba(255,255,255,0.7);text-align:center">
+                <strong style="color:var(--accent)">Plan View</strong> &mdash; Road corridor alignment visible in point cloud
+            </div>
         </div>
-        <div class="comparison-card" style="border: 1px solid rgba(255,255,255,0.1);">
-            <img src="keyframes/key_01.jpg" alt="Original drone view">
-            <div class="caption" style="background: var(--accent2); color: white;">Source Drone Frame &mdash; DJI October 2024</div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.1)">
+            <img src="keyframes/key_03.jpg" alt="Source Frame" style="width:100%;display:block">
+            <div style="padding:12px;font-size:12px;color:rgba(255,255,255,0.7);text-align:center">
+                <strong style="color:var(--accent)">Source Frame</strong> &mdash; One of 117 sequential frames used for reconstruction
+            </div>
         </div>
     </div>
 </section>
 
-<!-- SLIDE 14: CONCLUSION -->
-<section class="slide slide-footer">
-    <div class="slide-number">14</div>
-    <div class="uni-badge" style="border-color: var(--accent); color: var(--accent); margin-bottom: 30px;">Conclusion</div>
-    <h2>A Transformative Investment<br>for Uganda's Future</h2>
-    <p>
-        The Kampala-Mukono monorail will reduce road deterioration, eliminate congestion,
-        provide reliable 25-minute journeys, and position Uganda as a leader in modern
-        African transit infrastructure.
-    </p>
-    <p style="color: rgba(255,255,255,0.8); font-weight: 500;">
-        We recommend the Government of Uganda commissions a full feasibility study
-        for the Kampala-Mukono Straddle-Beam Monorail System.
-    </p>
-    <div class="contact-grid">
-        <div class="contact-item">
-            <div class="label">Consultant</div>
-            <div class="value">Venture Kubariho</div>
+<!-- ========== SLIDE 10: TECHNICAL SPECS ========== -->
+<section class="slide slide-dark" id="specs">
+    <div class="slide-number">10</div>
+    <div class="section-header">
+        <div class="tag">Technical</div>
+        <h2>System Specifications</h2>
+        <p>Based on proven Alstom INNOVIA 300 straddle-beam platform as deployed on the Cairo Monorail.</p>
+    </div>
+    <table class="specs-table">
+        <tr><th>System Type</th><td>Straddle-Beam Monorail (rubber-tyred bogies)</td></tr>
+        <tr><th>Reference System</th><td>Cairo Monorail (Arab Contractors / Alstom, 2024)</td></tr>
+        <tr><th>Guideway Beam</th><td>Pre-stressed concrete box section, 850mm wide x 1500mm deep, Grade C50/60</td></tr>
+        <tr><th>Support Piers</th><td>Reinforced concrete Y-columns, 25-30m span, 2.0m x 2.0m foundation</td></tr>
+        <tr><th>Clearance</th><td>10.0m above road surface (min. 5.5m per AASHTO for heavy vehicles)</td></tr>
+        <tr><th>Power Supply</th><td>750V DC third rail (underside of beam) + overhead catenary backup</td></tr>
+        <tr><th>Rolling Stock</th><td>Alstom INNOVIA 300: 4-car articulated, 65.6m, 800 pax (crush)</td></tr>
+        <tr><th>Maximum Speed</th><td>80 km/h (design) / 65 km/h (commercial average)</td></tr>
+        <tr><th>Capacity</th><td>Up to 40,000 passengers per hour per direction (pphpd)</td></tr>
+        <tr><th>Headway</th><td>3 min peak / 6 min off-peak / 90 sec minimum (CBTC)</td></tr>
+        <tr><th>Signalling</th><td>CBTC with ATO GoA3 (attended) upgradeable to GoA4 (unattended)</td></tr>
+        <tr><th>Safety</th><td>Platform screen doors, NFPA 130, emergency walkway, fire suppression</td></tr>
+        <tr><th>Road Protection</th><td>MASH TL-4 crash barriers, pedestrian fencing, LED warning, drainage</td></tr>
+    </table>
+</section>
+
+<!-- ========== SLIDE 11: STATIONS ========== -->
+<section class="slide slide-content" id="stations">
+    <div class="slide-number" style="color:var(--gray)">11</div>
+    <div class="section-header">
+        <div class="tag">Stations</div>
+        <h2>Proposed Station Locations</h2>
+        <p>Eight elevated stations at ~3km spacing, located at major population centres, employment nodes, and transport interchange points along the corridor.</p>
+    </div>
+    <div class="corridor-info">
+        <div class="map-placeholder">
+            <h3 style="color:var(--accent);margin-bottom:18px;font-size:16px">CORRIDOR ALIGNMENT</h3>
+            <ul class="station-list">
+                <li><span class="name">Kampala Central</span><br><span class="km">KM 0.0 &mdash; CBD terminus, interchange with existing taxi/BRT</span></li>
+                <li><span class="name">Kireka</span><br><span class="km">KM 4.0 &mdash; Major residential area, bus interchange</span></li>
+                <li><span class="name">Bweyogerere</span><br><span class="km">KM 7.5 &mdash; Commercial hub, park-and-ride facility</span></li>
+                <li><span class="name">Namboole</span><br><span class="km">KM 10.0 &mdash; Stadium, events &amp; sports complex</span></li>
+                <li><span class="name">Namanve</span><br><span class="km">KM 14.0 &mdash; Industrial park, major employment centre</span></li>
+                <li><span class="name">Seeta</span><br><span class="km">KM 17.5 &mdash; Residential suburb, schools catchment</span></li>
+                <li><span class="name">Mukono Central</span><br><span class="km">KM 22.0 &mdash; Town centre, UCU university, markets</span></li>
+                <li><span class="name">Mukono East</span><br><span class="km">KM 25.0 &mdash; Eastern terminus, future extension to Jinja</span></li>
+            </ul>
         </div>
-        <div class="contact-item">
-            <div class="label">Client</div>
-            <div class="value">Arab Contractors Uganda Ltd</div>
-        </div>
-        <div class="contact-item">
-            <div class="label">Recipient</div>
-            <div class="value">Ministry of Works &amp; Transport</div>
-        </div>
-        <div class="contact-item">
-            <div class="label">Reference</div>
-            <div class="value">VK/ACUL/MoWT/2026-04</div>
+        <div>
+            <h3 style="color:var(--primary);margin-bottom:18px;font-size:16px">Station Design (Cairo Model)</h3>
+            <div style="display:flex;flex-direction:column;gap:14px">
+                <div class="benefit-card" style="margin:0"><div class="icon green">&#8679;</div><div><h4>Elevated Platforms</h4><p>Centre-platform configuration at guideway level (~12m). Platform screen doors matching train door positions. Level boarding for universal access.</p></div></div>
+                <div class="benefit-card" style="margin:0"><div class="icon blue">&#9730;</div><div><h4>Weather Protection</h4><p>Full canopy coverage with steel-framed tensile membrane roof. Enclosed air-conditioned waiting areas at platform level.</p></div></div>
+                <div class="benefit-card" style="margin:0"><div class="icon orange">&#9881;</div><div><h4>Vertical Circulation</h4><p>2x escalators (up/down), 1x panoramic lift (DDA compliant), 1x fire stair per platform end. Tactile paving and audio announcements throughout.</p></div></div>
+                <div class="benefit-card" style="margin:0"><div class="icon purple">&#9041;</div><div><h4>Ground-Level Integration</h4><p>Boda-boda parking, matatu/taxi ranks, bicycle storage, and pedestrian plaza at ground level for seamless multimodal interchange.</p></div></div>
+            </div>
         </div>
     </div>
-    <p style="margin-top: 30px; font-size: 12px; color: rgba(255,255,255,0.3);">
-        BSc Transport Planning &amp; Engineering, Edinburgh Napier University
-        &bull; DJI Aerial Survey October 2024 &bull; COLMAP 3D Reconstruction
+</section>
+
+<!-- ========== SLIDE 12: KEY BENEFITS ========== -->
+<section class="slide slide-dark" id="benefits">
+    <div class="slide-number">12</div>
+    <div class="section-header">
+        <div class="tag">Impact Assessment</div>
+        <h2>Key Benefits</h2>
+        <p>Quantified benefits of the proposed monorail system for the Kampala-Mukono corridor.</p>
+    </div>
+    <div class="stats-grid">
+        <div class="stat-card"><div class="number">0%</div><div class="unit">road surface consumed</div><div class="label">Elevated guideway uses only pier footings in the existing median</div></div>
+        <div class="stat-card"><div class="number">30K</div><div class="unit">passengers/day shifted</div><div class="label">Removed from the road surface, reducing congestion and pavement loading</div></div>
+        <div class="stat-card"><div class="number">25min</div><div class="unit">end to end</div><div class="label">Kampala CBD to Mukono vs 3+ hours by road in AM peak</div></div>
+        <div class="stat-card"><div class="number">60%</div><div class="unit">road life extension</div><div class="label">Reduced equivalent standard axle loads (ESALs) on pavement structure</div></div>
+        <div class="stat-card"><div class="number">0</div><div class="unit">local emissions</div><div class="label">All-electric traction, compatible with hydroelectric renewable supply</div></div>
+        <div class="stat-card"><div class="number">99.5%</div><div class="unit">availability target</div><div class="label">Grade-separated, immune to road flooding, accidents, and traffic incidents</div></div>
+        <div class="stat-card"><div class="number">40K</div><div class="unit">pphpd capacity</div><div class="label">Scalable with headway reduction over 30-year design life</div></div>
+        <div class="stat-card"><div class="number">3yr</div><div class="unit">construction</div><div class="label">Pre-cast segments, night-time erection, minimal traffic management</div></div>
+    </div>
+</section>
+
+<!-- ========== SLIDE 13: ALTERNATIVES ========== -->
+<section class="slide slide-content">
+    <div class="slide-number" style="color:var(--gray)">13</div>
+    <div class="section-header">
+        <div class="tag">Appraisal</div>
+        <h2>Multi-Criteria Options Analysis</h2>
+        <p>Assessment of four mass transit options against key criteria specific to the Kampala-Mukono corridor constraints.</p>
+    </div>
+    <table class="comp-table">
+        <thead><tr><th style="text-align:left">Criterion</th><th>Monorail</th><th>BRT</th><th>Light Rail</th><th>Metro</th></tr></thead>
+        <tbody>
+            <tr><td style="font-weight:500">Road surface impact</td><td class="good">None (elevated)</td><td class="bad">High (dedicated lanes)</td><td class="bad">High (at-grade tracks)</td><td class="good">None (underground)</td></tr>
+            <tr><td style="font-weight:500">Cost per km (USD)</td><td>$40-60M</td><td class="good" style="font-weight:700">$5-15M</td><td>$30-50M</td><td class="bad">$150-300M</td></tr>
+            <tr><td style="font-weight:500">Construction disruption</td><td class="good">Low (pre-cast piers)</td><td class="bad">High (road rebuild)</td><td class="bad">Very high</td><td class="bad">Extreme (tunnelling)</td></tr>
+            <tr><td style="font-weight:500">Capacity (pphpd)</td><td>40,000</td><td>10,000</td><td>20,000</td><td class="good" style="font-weight:700">60,000</td></tr>
+            <tr><td style="font-weight:500">Reduces road deterioration</td><td class="good">Yes (primary objective)</td><td class="bad">No (increases it)</td><td class="bad">No (at-grade loading)</td><td class="good">Yes (underground)</td></tr>
+            <tr><td style="font-weight:500">Build timeline</td><td class="good">3-4 years</td><td>2-3 years</td><td>4-5 years</td><td class="bad">8-12 years</td></tr>
+            <tr><td style="font-weight:500">African precedent</td><td class="good">Cairo (Arab Contractors)</td><td>Dar es Salaam, Lagos</td><td>Addis Ababa</td><td class="bad">None comparable</td></tr>
+            <tr style="background:var(--accent);color:var(--dark);font-weight:700"><td>Overall Suitability</td><td style="font-size:16px">&#9733;&#9733;&#9733;&#9733;&#9733;</td><td style="font-size:16px">&#9733;&#9733;&#9734;&#9734;&#9734;</td><td style="font-size:16px">&#9733;&#9733;&#9733;&#9734;&#9734;</td><td style="font-size:16px">&#9733;&#9733;&#9733;&#9734;&#9734;</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ========== SLIDE 14: COST ========== -->
+<section class="slide slide-dark" id="cost" style="background:linear-gradient(180deg,#1a3a5c,#0d1b2a)">
+    <div class="slide-number">14</div>
+    <div class="section-header">
+        <div class="tag">Financial Estimate</div>
+        <h2>Preliminary Cost Estimate</h2>
+        <p>Based on Cairo Monorail outturn costs ($46M/km) and adjusted for local conditions. Benchmarked against Mumbai ($53M/km) and S&atilde;o Paulo ($62M/km).</p>
+    </div>
+    <div class="cost-breakdown">
+        <div class="cost-item"><span class="name">Guideway &amp; Piers (25km)</span><div class="bar-container"><div class="bar" style="width:75%"></div></div><span class="amount">$600M</span></div>
+        <div class="cost-item"><span class="name">Stations (8 elevated)</span><div class="bar-container"><div class="bar" style="width:25%"></div></div><span class="amount">$200M</span></div>
+        <div class="cost-item"><span class="name">Rolling Stock (20 x INNOVIA 300)</span><div class="bar-container"><div class="bar" style="width:30%"></div></div><span class="amount">$240M</span></div>
+        <div class="cost-item"><span class="name">Systems (power, CBTC, comms)</span><div class="bar-container"><div class="bar" style="width:20%"></div></div><span class="amount">$160M</span></div>
+        <div class="cost-item"><span class="name">Depot &amp; Maintenance Facility</span><div class="bar-container"><div class="bar" style="width:12%"></div></div><span class="amount">$100M</span></div>
+        <div class="cost-item"><span class="name">Land, Utilities, Contingency (15%)</span><div class="bar-container"><div class="bar" style="width:15%"></div></div><span class="amount">$120M</span></div>
+        <div class="cost-item" style="border-top:2px solid var(--accent);border-bottom:none;padding-top:18px">
+            <span class="name" style="font-weight:700;color:white">TOTAL ESTIMATED COST</span>
+            <div class="bar-container"><div class="bar" style="width:100%;background:var(--accent2)"></div></div>
+            <span class="amount" style="font-size:18px">$1.42B</span>
+        </div>
+    </div>
+    <p style="margin-top:25px;font-size:12px;color:rgba(255,255,255,0.4);max-width:700px;text-align:center">
+        Cost per km: ~$57M. Financing: AfDB / World Bank IDA, PPP concession, Government of Uganda sovereign bonds.
+        Arab Contractors has established EPC capability and Cairo Monorail construction experience.
+    </p>
+</section>
+
+<!-- ========== SLIDE 15: CONCLUSION ========== -->
+<section class="slide slide-footer" id="conclusion">
+    <div class="slide-number">15</div>
+    <div class="logos-bar" style="margin-bottom:25px">
+        <div class="logo-item">
+            <img src="assets/arab_contractors_logo.gif" alt="Arab Contractors" style="height:55px">
+            <div class="logo-text">Arab Contractors</div>
+        </div>
+        <div class="logo-item">
+            <img src="assets/uganda_coat_of_arms.png" alt="Uganda" style="height:55px">
+            <div class="logo-text">Ministry of Works</div>
+        </div>
+    </div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:38px;margin-bottom:18px">Recommendation</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.7);max-width:650px;margin:0 auto 20px;line-height:1.7">
+        Based on the aerial survey analysis, 3D corridor reconstruction, multi-criteria options appraisal,
+        and benchmarking against the Cairo Monorail, this proposal recommends that the Government of Uganda,
+        through the Ministry of Works &amp; Transport, commissions a <strong style="color:white">full feasibility study</strong>
+        for the Kampala-Mukono Straddle-Beam Monorail System.
+    </p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.5);max-width:600px;margin:0 auto 25px;line-height:1.6">
+        Arab Contractors Uganda Limited, with direct experience from the Cairo Monorail project,
+        is uniquely positioned to deliver this infrastructure for the Republic of Uganda.
+    </p>
+
+    <div class="prepared-by" style="margin-top:0;margin-bottom:20px">
+        <div class="name">Venture Kubariho</div>
+        <div class="role">Transport Planning &amp; Engineering Expert</div>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-item"><div class="label">Client</div><div class="value">Arab Contractors Uganda Ltd</div></div>
+        <div class="contact-item"><div class="label">Recipient</div><div class="value">Ministry of Works &amp; Transport</div></div>
+        <div class="contact-item"><div class="label">Reference</div><div class="value">VK/ACUL/MoWT/2026-04</div></div>
+        <div class="contact-item"><div class="label">Date</div><div class="value">April 2026</div></div>
+    </div>
+
+    <p style="margin-top:25px;font-size:11px;color:rgba(255,255,255,0.25)">
+        Drone Survey: DJI Aerial Platform, October 2024 &bull; 3D Reconstruction: COLMAP SfM (26,757 points)
+        &bull; Visualization: OpenCV compositing &bull; Reference: Cairo Monorail / Alstom INNOVIA 300
     </p>
 </section>
 
 <script>
-// Slideshow for comparison images
 const comparisons = [
     { src: 'output/compare_key_01.jpg', label: 'Section A: Mukono Town Centre' },
-    { src: 'output/compare_key_02.jpg', label: 'Section B: Mukono Central Station' },
+    { src: 'output/compare_key_02.jpg', label: 'Section B: Commercial Zone' },
     { src: 'output/compare_key_03.jpg', label: 'Section C: Suburban Corridor' },
     { src: 'output/compare_key_04.jpg', label: 'Section D: Road Median Alignment' },
     { src: 'output/compare_key_05.jpg', label: 'Section E: Curve Transition Zone' },
-    { src: 'output/compare_key_06.jpg', label: 'Section F: Proposed Namanve Station' },
-    { src: 'output/compare_key_07.jpg', label: 'Section G: Industrial Zone Corridor' },
+    { src: 'output/compare_key_06.jpg', label: 'Section F: Namanve Station Area' },
+    { src: 'output/compare_key_07.jpg', label: 'Section G: Industrial Zone' },
     { src: 'output/compare_key_08.jpg', label: 'Section H: Road Protection Zone' },
     { src: 'output/compare_key_09.jpg', label: 'Section I: Approaching Kampala' },
     { src: 'output/compare_key_10.jpg', label: 'Section J: Kampala Entry Corridor' },
 ];
-
 let currentSlide = 0;
 const img = document.getElementById('showcase-img');
 const dotsContainer = document.getElementById('dots');
-
-// Create dots
 comparisons.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'dot' + (i === 0 ? ' active' : '');
     dot.onclick = () => goToSlide(i);
     dotsContainer.appendChild(dot);
 });
-
 function goToSlide(n) {
     currentSlide = n;
     img.src = comparisons[n].src;
     img.alt = comparisons[n].label;
-    document.querySelectorAll('.dot').forEach((d, i) => {
-        d.classList.toggle('active', i === n);
-    });
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === n));
 }
-
-// Auto-advance every 4 seconds
-setInterval(() => {
-    goToSlide((currentSlide + 1) % comparisons.length);
-}, 4000);
-
-// Smooth scrolling for nav links
+setInterval(() => goToSlide((currentSlide + 1) % comparisons.length), 4000);
 document.querySelectorAll('.nav-bar a').forEach(a => {
     a.addEventListener('click', e => {
         e.preventDefault();
@@ -1273,6 +773,5 @@ document.querySelectorAll('.nav-bar a').forEach(a => {
     });
 });
 </script>
-
 </body>
 </html>
